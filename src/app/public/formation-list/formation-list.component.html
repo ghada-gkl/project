@@ -1,0 +1,17 @@
+<div class="formation-list">
+    <h1>Rechercher une Formation</h1>
+    <input
+      type="text"
+      placeholder="Rechercher par mot-clé"
+      [(ngModel)]="searchQuery"
+    />
+    <div class="formations">
+      <div  class="formation-item">
+        @for (formation of filteredFormations; track $index) {}
+        <h2>{{ formation.title }}</h2>
+        <p>{{ formation.description }}</p>
+        <a [routerLink]="['/public/formations', formation.id]">Voir les détails</a>
+      </div>
+    </div>
+  </div>
+  
